@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -7,5 +9,50 @@
 body {
 
     background-color: var(--color-white);
+    display: grid;
+    width: 100vw;
+    overflow-x: hidden;
+    height: 500vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: .20fr 1fr 1fr 1fr .20fr .70fr .70fr .40fr;
+    grid-template-areas: 
+    "header"
+    "llamada"
+    "."
+    "."
+    "."
+    "."
+    "."
+    "footer"
+    ;
+
+}
+
+header {
+
+    grid-area: header;
+    width: 100%;
+    height: 100%;
+
+}
+
+footer {
+
+    grid-area: footer;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+}
+
+.section_llamada_accion {
+
+    grid-area: llamada;
+    width: 100%;
+    height: 100%;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
