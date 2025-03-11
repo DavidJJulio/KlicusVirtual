@@ -22,6 +22,16 @@ class Header extends HTMLElement {
             align-items: center;
             justify-content: center;
           }
+
+          .menu {
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+          }
           
           ul {
             list-style: none;
@@ -58,31 +68,116 @@ class Header extends HTMLElement {
             align-items: center;
             color: black;
             font-weight: bold;
+            font-size: var(--font-size-subtitle)
           }
 
           .login-icon {
             margin-right: 5px;
           }
+
+          .menu i {
+
+          display: none;
+
+          }
+
+          @media (max-width: 1024px) {
+
+          .menu i {
+
+              display: block;
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin: 4%;
+              width: auto;
+              height: auto;
+              font-size: var(--font-size-subtitle);
+
+          }
+
+          .menu i:hover {
+
+            font-size: var(--font-size-title);
+            font-weight: bold;
+
+          }
+
+          .container {
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            let: 0;
+            width: 100%;
+            height: 30vh;
+            background-color: white;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+          }
+
+          .login {
+
+            display: none;
+
+          }
+
+          ul {
+
+            flex-direction: column;
+
+          }
+
+          }
+
+          
         </style>
 
-
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         
         <nav>
-          <ul>
-            <li><a href="#" class="active">Inicio</a></li>
-            <li><a href="#">Validación</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Preguntas Frecuentes</a></li>
-            <li><a href="#">Contáctenos</a></li>
-          </ul>
-          <div class="login">
-            <span class="login-icon">👤</span>
-            <span>Ingreso estudiantes</span>
+          <div class="menu">
+
+          <div class = "container">
+
+            <ul>
+              <li><a href="#" class="active">Inicio</a></li>
+              <li><a href="#">Validación</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Preguntas Frecuentes</a></li>
+              <li><a href="#">Contáctenos</a></li>
+            </ul>
+
+            <div class="login">
+              <span class="login-icon">👤</span>
+              <span>Ingreso estudiantes</span>
+            </div>
+
           </div>
+
+
+          <i class='bx bx-menu'></i>
+
+          </div>
+          
         </nav>
       `;
 
+
+      let menuButton = this.shadowRoot.querySelector(".menu i")
+      menuButton.addEventListener('click', () => {
+        
+        let container = this.shadowRoot.querySelector('.container')
+        
+        container.style.display = "flex"
+
+      })
     }
+
+    
 }
   
   customElements.define("my-header", Header);
