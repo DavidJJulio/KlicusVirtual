@@ -2,4 +2,18 @@
     --color-white: #f1f1f1;
     --color-black: #000;
     --color-yellow: #E2E000;
+
+    
+    /* Font size */
+
+    --font-size-small-text: 12px;   /* Textos secundarios o etiquetas */
+    --font-size-body: 14px;         /* Texto principal del cuerpo */
+    --font-size-paragraph: 16px;    /* Tamaño estándar para párrafos */
+    --font-size-subtitle: 18px;     /* Subtítulos y texto destacado */
+    --font-size-title: 20px;        /* Títulos pequeños */
+    --font-size-heading: 24px;      /* Encabezados h2 o secciones */
+    --font-size-main-heading: 30px; /* Encabezado principal h1 */
+    --font-size-hero: 36px;         /* Titulares grandes en secciones destacadas */
+    --font-size-display: 48px;      /* Tamaño muy grande para banners o slogans */
 }
+

@@ -37,7 +37,7 @@ class Header extends HTMLElement {
             text-decoration: none;
             color: black;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: var(--font-size-subtitle);
             white-space: nowrap;
           }
 
