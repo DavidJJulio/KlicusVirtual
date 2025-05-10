@@ -3,8 +3,23 @@ class Header extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+
+
+
+
+
+
+
+      // HTML && CSS DEL WEBCOMPONENT
   
       this.shadowRoot.innerHTML = /*html*/ `
+
+
+
+
+
+
+
 
         <style>
 
@@ -128,6 +143,7 @@ class Header extends HTMLElement {
           ul {
 
             flex-direction: column;
+            gap: 8px;
 
           }
 
@@ -135,6 +151,15 @@ class Header extends HTMLElement {
 
           
         </style>
+
+
+
+
+
+
+
+
+
 
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         
@@ -153,7 +178,7 @@ class Header extends HTMLElement {
 
             <div class="login">
               <span class="login-icon">👤</span>
-              <span>Ingreso estudiantes</span>
+              <span class="ingreso">Ingreso estudiantes</span>
             </div>
 
           </div>
@@ -167,14 +192,45 @@ class Header extends HTMLElement {
       `;
 
 
+
+
+
+
+
+      // FUNCIONALIDAD DEL BOTON DEL MENU
+
       let menuButton = this.shadowRoot.querySelector(".menu i")
       menuButton.addEventListener('click', () => {
-        
+
         let container = this.shadowRoot.querySelector('.container')
-        
-        container.style.display = "flex"
+
+        if( container.style.display != "flex" ) {
+          container.style.display = "flex"
+        } else {
+          container.style.display = "none"
+        }
 
       })
+
+      // FUNCIONALIDAD DE EL HEADER
+
+      let links = this.shadowRoot.querySelectorAll('a')
+      links.forEach(val => {
+        
+        val.addEventListener('click', () => {
+
+          links.forEach(val2 => {
+            if(val2.className == "active"){
+              val2.classList.remove("active")
+            }})
+          
+          val.className = "active"
+
+        })
+
+      })
+
+
     }
 
     
